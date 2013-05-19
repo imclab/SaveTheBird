@@ -15,10 +15,12 @@ $(document).ready(function() {
 		});
 		$("#thebirdbox img").css({
 			position: "absolute",
-			top: 200,
-			left: 200,
+			top: 10,
+			left: 0,
 			width: 192
 		}).animate({
+			top: 100,
+			left: 100
 			width: 800
 		}, 4000, 'linear', function() {
 			if( $(window).height() < 200 ) {
