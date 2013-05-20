@@ -1,10 +1,11 @@
 var mywindow;
 $(document).ready(function() {
+	alert("sup");
 	var bird = chrome.extension.getURL('bird.gif');
 	var splat = chrome.extension.getURL('splat.png');
 	var popup = chrome.extension.getURL('popup.html');
-	if( $("thebirdbox").length == 0 ) {
-		$("body:first").prepend("<div id='thebirdbox'><img src='"+bird+"' /></div>");
+	if( $("#thebirdbox").length == 0 ) {
+		$("body").prepend("<div id='thebirdbox'><img class='bird' src='"+bird+"' /></div>");
 		$("#thebirdbox").css({
 			position: "absolute",
 			top: 0,
@@ -13,16 +14,16 @@ $(document).ready(function() {
 			width: $(document).width(),
 			height: $(document).height()
 		});
-		$("#thebirdbox img").css({
+		$("#thebirdbox .bird").css({
 			position: "absolute",
-			top: 10,
+			top: 0,
 			left: 0,
 			width: 192
 		}).animate({
 			top: 100,
-			left: 100
+			left: 100,
 			width: 800
-		}, 4000, 'linear', function() {
+		}, 3000, 'linear', function() {
 			if( $(window).height() < 200 ) {
 				$("#thebirdbox").remove();
 				var x = screen.width/2-(192/2);
